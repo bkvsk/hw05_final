@@ -33,15 +33,15 @@
                 </ul>
                 <li class="list-group-item">
                     {% if is_following %}
-                    <a class="btn btn-lg btn-light"
-                            href="{% url 'profile_unfollow' author %}" role="button">
-                    Отписаться
-                    </a>
+                        <a class="btn btn-lg btn-light"
+                                href="{% url 'profile_unfollow' author %}" role="button">
+                        Отписаться
+                        </a>
                     {% else %}
-                    <a class="btn btn-lg btn-primary"
-                            href="{% url 'profile_follow' author %}" role="button">
-                    Подписаться
-                    </a>
+                        <a class="btn btn-lg btn-primary"
+                                href="{% url 'profile_follow' author %}" role="button">
+                        Подписаться
+                        </a>
                     {% endif %}
                 </li>
             </div>
