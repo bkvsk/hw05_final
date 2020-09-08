@@ -7,16 +7,16 @@ User = get_user_model()
 
 class Group(models.Model):
     title = models.CharField(
-        'Название',
         max_length=200,
+        verbose_name='Название',
     )
     slug = models.SlugField(
-        'Слаг',
         max_length=30,
         unique=True,
+        verbose_name='Слаг',
     )
     description = models.TextField(
-        'Описание',
+        verbose_name='Описание',
     )
 
     def __str__(self):
@@ -29,11 +29,11 @@ class Group(models.Model):
 
 class Post(models.Model):
     text = models.TextField(
-        'Текст записи',
+        verbose_name='Текст записи',
     )
     pub_date = models.DateTimeField(
-        'Дата публикации',
         auto_now_add=True,
+        verbose_name='Дата публикации',
     )
     author = models.ForeignKey(
         User,
@@ -50,10 +50,10 @@ class Post(models.Model):
         verbose_name='Сообщество',
     )
     image = models.ImageField(
-        'Изображение',
         upload_to='posts/',
         blank=True,
         null=True,
+        verbose_name='Изображение',
     )
 
     def __str__(self):
@@ -67,12 +67,12 @@ class Post(models.Model):
 
 class Comment(models.Model):
     text = models.TextField(
-        'Текст комментария',
         max_length=1000,
+        verbose_name='Текст комментария',
     )
     created = models.DateTimeField(
-        'Дата публикации',
         auto_now_add=True,
+        verbose_name='Дата публикации',
     )
     author = models.ForeignKey(
         User,
